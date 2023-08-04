@@ -1,0 +1,73 @@
+.project {
+  background-color: #fff;
+  width: 300px;
+  user-select: none;
+}
+
+.img {
+  width: 300px;
+  height: 224px;
+}
+
+.img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content {
+  padding: 20px;
+}
+
+.content h2 {
+  font-weight: normal;
+  font-size: 20px;
+  user-select: text;
+}
+
+.content .buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.content .buttons button {
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  transition: opacity 0.3s;
+  -webkit-transition: opacity 0.3s;
+  -moz-transition: opacity 0.3s;
+  -ms-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+}
+
+.content .buttons button:hover {
+  opacity: 0.8;
+}
+
+.content .buttons button.disabled {
+  filter: grayscale(1);
+  -webkit-filter: grayscale(1);
+}
+
+.content .buttons button:first-child {
+  background: #FEAC5E;
+  background: linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E);
+}
+
+.content .buttons button:last-child {
+  background: #7a7adf;
+}
+
+.content .buttons button a {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  padding: 4px 16px;
+}
