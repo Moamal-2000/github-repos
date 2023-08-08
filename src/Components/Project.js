@@ -13,9 +13,11 @@ const Project = ({ data }) => {
     "multiple-sidebars",
   ];
 
-
   if (ignoredWebsitesNames.includes(name)) return null;
 
+  function disableLink(e) {
+    if (!homepage) e.preventDefault();
+  }
 
   return (
     <div className={styles.project}>
@@ -31,13 +33,26 @@ const Project = ({ data }) => {
       </div>
 
       <div className={styles.content}>
-        <h2>{name}</h2>
+        <a
+          href={homepage}
+          target="_blank"
+          rel="noreferrer"
+          onClick={(e) => disableLink(e)}
+        >
+          <h2>{name}</h2>
+        </a>
         <div className={styles.buttons}>
-          <button className={`${styles.liveButton} ${!homepage ? styles.disabled : ""}`} type="button">
+          <button
+            className={`${styles.liveButton} ${
+              !homepage ? styles.disabled : ""
+            }`}
+            type="button"
+          >
             <a
               href={homepage}
               target="_blank"
               rel="noreferrer"
+              onClick={(e) => disableLink(e)}
             >
               Live
             </a>
