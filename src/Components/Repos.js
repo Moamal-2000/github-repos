@@ -1,10 +1,10 @@
-import useApiData from "./Hooks/useFetch";
+import useFetch from "./Hooks/useFetch";
 import Project from "./Project";
-import styles from "./Repos.module.css";
+import styles from "./_Repos.module.scss";
 
 const Repos = () => {
   // const userData = useApiData("https://api.github.com/users/Moamal-2000")
-  const reposData = useApiData("https://api.github.com/users/Moamal-2000/repos");
+  const reposData = useFetch("https://api.github.com/users/Moamal-2000/repos");
 
   return (
     <div className="container">

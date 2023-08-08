@@ -50,17 +50,17 @@
   opacity: 0.8;
 }
 
-.content .buttons button.disabled {
-  filter: grayscale(1);
-  -webkit-filter: grayscale(1);
-}
-
-.content .buttons button:first-child {
+.buttons .liveButton {
   background: #FEAC5E;
   background: linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E);
+
+  &.disabled {
+    filter: grayscale(1);
+    -webkit-filter: grayscale(1);
+  }
 }
 
-.content .buttons button:last-child {
+.buttons .repoButton {
   background: #7a7adf;
 }
 
@@ -70,4 +70,5 @@
   color: #fff;
   font-weight: bold;
   padding: 4px 16px;
+  border-radius: inherit;
 }
