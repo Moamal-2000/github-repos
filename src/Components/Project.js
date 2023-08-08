@@ -1,7 +1,7 @@
 import styles from "./_Project.module.scss";
 
 const Project = ({ data }) => {
-  const { homepage, html_url, name, create_at } = data;
+  let { homepage, html_url, name, create_at, description } = data;
   const userName = data.owner.login;
   const websiteImgUrl = `https://raw.githubusercontent.com/${userName}/${name}/main/website.png`;
   const ignoredWebsitesNames = [
@@ -14,6 +14,11 @@ const Project = ({ data }) => {
   ];
 
   if (ignoredWebsitesNames.includes(name)) return null;
+
+  if (!homepage) {
+    const liveLink = description.split(" ")[1];
+    homepage = liveLink
+  }
 
   function disableLink(e) {
     if (!homepage) e.preventDefault();
