@@ -3,8 +3,8 @@ import PreviewImage from "./PreviewImage";
 import styles from "./_Project.module.scss";
 
 const Project = ({ data }) => {
-  let { homepage, html_url, name, create_at, description } = data;
-  const userName = data.owner.login;
+  let { homepage, html_url, name, description } = data;
+  let userName = "Moamal-2000";
   const websiteImgUrl = `https://raw.githubusercontent.com/${userName}/${name}/main/website.png`;
   const ignoredWebsitesNames = [
     "CV",
@@ -33,6 +33,7 @@ const Project = ({ data }) => {
     setSrcImg(e.target.src);
   }
 
+
   return (
     <>
       <PreviewImage
@@ -48,7 +49,6 @@ const Project = ({ data }) => {
               (e.target.src = require("./images/placeholder-img.png"))
             }
             alt="Website"
-            title={create_at}
             decoding="async"
           />
         </div>
