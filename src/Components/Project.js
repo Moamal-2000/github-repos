@@ -1,3 +1,5 @@
+import { useState } from "react";
+import PreviewImage from "./PreviewImage";
 import styles from "./_Project.module.scss";
 
 const Project = ({ data }) => {
@@ -12,21 +14,33 @@ const Project = ({ data }) => {
     "messenger-webpage",
     "multiple-sidebars",
   ];
+  const [isOverlayActive, setIsOverlayActive] = useState(false);
+  const [srcImg, setSrcImg] = useState("");
 
   if (ignoredWebsitesNames.includes(name)) return null;
 
   if (!homepage) {
     const liveLink = description.split(" ")[1];
-    homepage = liveLink
+    homepage = liveLink;
   }
 
   function disableLink(e) {
     if (!homepage) e.preventDefault();
   }
 
+  function handleClickImg(e) {
+    setIsOverlayActive(true);
+    setSrcImg(e.target.src);
+  }
+
   return (
     <div className={styles.project}>
-      <div className={styles.img}>
+      <PreviewImage
+        src={srcImg}
+        isOverlayActive={isOverlayActive}
+        setIsOverlayActive={setIsOverlayActive}
+      />
+      <div className={styles.img} onClick={(e) => handleClickImg(e)}>
         <img
           src={websiteImgUrl}
           onError={(e) =>
