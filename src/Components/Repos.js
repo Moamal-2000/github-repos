@@ -3,7 +3,6 @@ import Project from "./Project";
 import styles from "./_Repos.module.scss";
 
 const Repos = () => {
-  // const userData = useApiData("https://api.github.com/users/Moamal-2000")
   const reposData = useFetch("https://api.github.com/users/Moamal-2000/repos");
 
   return (
@@ -17,6 +16,3 @@ const Repos = () => {
 };
 
 export default Repos;
-
-
-// Get img website from github => https://github.com/Moamal-2000/{name-repo}/tree/main/website,png

@@ -5,6 +5,7 @@
   user-select: none;
   border-radius: 8px;
   width: 100%;
+  @include prefix(transition, opacity .3s);
 }
 
 @media (max-width: 768px) and (min-width: 376px) {
@@ -28,7 +29,7 @@
   @include prefix(transition, transform .4s);
 
   .project:hover & {
-    @include prefix(transform, scale(1.02));
+    @include prefix(transform, scale(1.01));
   }
 }
 
@@ -50,7 +51,7 @@
 
 .content h2 {
   font-weight: normal;
-  font-size: 20px;
+  font-size: 1.25rem;
   cursor: pointer;
 }
 
@@ -86,7 +87,7 @@
 }
 
 .buttons .repoButton {
-  background: #7a7adf;
+  background: #6363f3;
 }
 
 .content .buttons button a {

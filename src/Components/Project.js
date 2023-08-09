@@ -34,56 +34,59 @@ const Project = ({ data }) => {
   }
 
   return (
-    <div className={styles.project}>
+    <>
       <PreviewImage
         src={srcImg}
         isOverlayActive={isOverlayActive}
         setIsOverlayActive={setIsOverlayActive}
       />
-      <div className={styles.img} onClick={(e) => handleClickImg(e)}>
-        <img
-          src={websiteImgUrl}
-          onError={(e) =>
-            e.target.src = require("./images/placeholder-img.png")
-          }
-          alt="Website"
-          title={create_at}
-        />
-      </div>
+      <div className={styles.project}>
+        <div className={styles.img} onClick={(e) => handleClickImg(e)}>
+          <img
+            src={websiteImgUrl}
+            onError={(e) =>
+              (e.target.src = require("./images/placeholder-img.png"))
+            }
+            alt="Website"
+            title={create_at}
+            decoding="async"
+          />
+        </div>
 
-      <div className={styles.content}>
-        <a
-          href={homepage}
-          target="_blank"
-          rel="noreferrer"
-          onClick={(e) => disableLink(e)}
-        >
-          <h2>{name}</h2>
-        </a>
-        <div className={styles.buttons}>
-          <button
-            className={`${styles.liveButton} ${
-              !homepage ? styles.disabled : ""
-            }`}
-            type="button"
+        <div className={styles.content}>
+          <a
+            href={homepage}
+            target="_blank"
+            rel="noreferrer"
+            onClick={(e) => disableLink(e)}
           >
-            <a
-              href={homepage}
-              target="_blank"
-              rel="noreferrer"
-              onClick={(e) => disableLink(e)}
+            <h2>{name}</h2>
+          </a>
+          <div className={styles.buttons}>
+            <button
+              className={`${styles.liveButton} ${
+                !homepage ? styles.disabled : ""
+              }`}
+              type="button"
             >
-              Live
-            </a>
-          </button>
-          <button className={styles.repoButton} type="button">
-            <a href={html_url} target="_blank" rel="noreferrer">
-              Repo
-            </a>
-          </button>
+              <a
+                href={homepage}
+                target="_blank"
+                rel="noreferrer"
+                onClick={(e) => disableLink(e)}
+              >
+                Live
+              </a>
+            </button>
+            <button className={styles.repoButton} type="button">
+              <a href={html_url} target="_blank" rel="noreferrer">
+                Repo
+              </a>
+            </button>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
