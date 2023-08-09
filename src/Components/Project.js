@@ -44,7 +44,7 @@ const Project = ({ data }) => {
         <img
           src={websiteImgUrl}
           onError={(e) =>
-            (e.target.src = require("./images/placeholder-img.png"))
+            e.target.src = require("./images/placeholder-img.png")
           }
           alt="Website"
           title={create_at}

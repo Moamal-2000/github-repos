@@ -1,8 +1,10 @@
+@import "../Sass/mixins";
+
 .repos {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   justify-content: center;
+  justify-items: center;
   gap: 30px;
   margin: 60px 0;
 }
