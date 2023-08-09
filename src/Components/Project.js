@@ -1,6 +1,7 @@
 import { useState } from "react";
 import PreviewImage from "./PreviewImage";
 import styles from "./_Project.module.scss";
+import utility from "./_UtilityClasses.module.scss";
 
 const Project = ({ data }) => {
   let { homepage, html_url, name, description } = data;
@@ -20,7 +21,7 @@ const Project = ({ data }) => {
   if (ignoredWebsitesNames.includes(name)) return null;
 
   if (!homepage) {
-    const liveLink = description.split(" ")[1];
+    const liveLink = description?.split(" ")[1];
     homepage = liveLink;
   }
 
@@ -41,7 +42,7 @@ const Project = ({ data }) => {
         isOverlayActive={isOverlayActive}
         setIsOverlayActive={setIsOverlayActive}
       />
-      <div className={styles.project}>
+      <div className={`${utility.project} ${styles.project}`}>
         <div className={styles.img} onClick={(e) => handleClickImg(e)}>
           <img
             src={websiteImgUrl}
