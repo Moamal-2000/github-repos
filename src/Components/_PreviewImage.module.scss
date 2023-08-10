@@ -8,6 +8,7 @@
   height: 100%;
   z-index: 1000;
   background-color: rgba(0, 0, 0, .8);
+  user-select: none;
   opacity: 0;
   visibility: hidden;
   @include center-x-y;
@@ -26,13 +27,8 @@
 }
 
 .imgHolder {
-  width: 95%;
-  height: 90%;
-  @include prefix(border-radius, 10px);
+  width: 100%;
+  height: 100%;
   position: absolute;
   z-index: 10;
-
-  & img {
-    @include prefix(border-radius, inherit);
-  }
 }
