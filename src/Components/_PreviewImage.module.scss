@@ -1,0 +1,34 @@
+@import "../Sass/mixins";
+
+.overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, .8);
+  user-select: none;
+  opacity: 0;
+  visibility: hidden;
+  @include center-x-y;
+  @include prefix(transition, opacity .3s);
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@media (max-width: 1200px) {
+  .overlay {
+    display: none;
+  }
+}
+
+.imgHolder {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 10;
+}

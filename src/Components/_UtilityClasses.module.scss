@@ -1,0 +1,18 @@
+@import "../Sass/mixins";
+
+.repos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-content: center;
+  justify-items: center;
+  gap: 20px;
+  column-gap: 16px;
+  margin: 60px 0;
+  @include prefix(transition, opacity .3s);
+}
+
+@media (min-width: 768px) {
+  .repos .project:not(:hover) {
+    opacity: .7;
+  }
+}

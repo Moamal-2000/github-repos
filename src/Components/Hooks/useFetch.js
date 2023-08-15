@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-export default function useApiData(url) {
+export default function useFetch(url) {
   const [data, setData] = useState(null);
 
   useEffect(() => {
