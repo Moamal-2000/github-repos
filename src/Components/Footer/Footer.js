@@ -27,7 +27,7 @@ const Footer = () => {
           <li>
             <a
               href="https://www.facebook.com/MoamalAlaa109"
-              alt="Link facebook profile"
+              title="Link facebook profile"
               target="_blank"
               rel="noreferrer"
             >
@@ -38,7 +38,7 @@ const Footer = () => {
           <li>
             <a
               href="https://www.linkedin.com/in/moamal-alaa-a4bb15237"
-              alt="Link linkedin profile"
+              title="Link linkedin profile"
               target="_blank"
               rel="noreferrer"
             >
@@ -49,7 +49,7 @@ const Footer = () => {
           <li>
             <a
               href="https://codepen.io/moamal-2000"
-              alt="Link codepen profile"
+              title="Link codepen profile"
               target="_blank"
               rel="noreferrer"
             >
@@ -60,7 +60,7 @@ const Footer = () => {
           <li>
             <a
               href="https://www.codewars.com/users/Moamal-2000"
-              alt="Link codewars profile"
+              title="Link codewars profile"
               target="_blank"
               rel="noreferrer"
             >
@@ -77,8 +77,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
-// Codewars => https://www.codewars.com/users/Moamal-2000
-// Linkedin => https://www.linkedin.com/in/moamal-alaa-a4bb15237
-// Facebook => https://www.facebook.com/MoamalAlaa109
-// Codepen => https://codepen.io/moamal-2000

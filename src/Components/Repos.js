@@ -1,14 +1,12 @@
+import useFetchDataFrom from "../Hooks/useFetchDataFrom";
 import { staticReposData } from "./Data/staticReposData";
-import useFetch from "./Hooks/useFetch";
 import Project from "./Project";
 import utility from "./_UtilityClasses.module.scss";
 
 const Repos = () => {
-  let reposData = useFetch("https://api.github.com/users/Moamal-2000/repos");
+  let reposData = useFetchDataFrom("https://api.github.com/users/Moamal-2000/repos");
 
-  if (reposData) {
-    reposData = reposData.concat(staticReposData)
-  }
+  if (reposData) reposData = [...reposData, ...staticReposData];
 
   return (
     <div className="container">

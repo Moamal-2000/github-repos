@@ -35,7 +35,6 @@ const Project = ({ data }) => {
     setSrcImg(e.target.src);
   }
 
-
   return (
     <>
       <PreviewImage
@@ -43,6 +42,7 @@ const Project = ({ data }) => {
         isOverlayActive={isOverlayActive}
         setIsOverlayActive={setIsOverlayActive}
       />
+
       <div className={`${utility.project} ${styles.project}`}>
         <div className={styles.img} onClick={(e) => handleClickImg(e)}>
           <img
@@ -51,7 +51,6 @@ const Project = ({ data }) => {
               (e.target.src = require("../images/placeholder-img.png"))
             }
             alt="Website"
-            decoding="async"
           />
         </div>
 

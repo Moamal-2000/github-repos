@@ -10,13 +10,13 @@
   background-color: rgba(0, 0, 0, .8);
   user-select: none;
   opacity: 0;
-  visibility: hidden;
+  pointer-events: none;
   @include center-x-y;
   @include prefix(transition, opacity .3s);
 
   &.active {
     opacity: 1;
-    visibility: visible;
+    pointer-events: all;
   }
 }
 

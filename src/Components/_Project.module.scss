@@ -1,10 +1,10 @@
 @import "../Sass/mixins";
 
 .project {
-  background-color: #fff;
+  background-color: var(--white);
   user-select: none;
-  border-radius: 8px;
   width: 100%;
+  @include prefix(border-radius, 8px);
   @include prefix(transition, opacity .3s);
 }
 
@@ -20,7 +20,7 @@
   min-height: 224px;
   overflow: hidden;
   cursor: pointer;
-  border-radius: 8px 8px 0 0;
+  @include prefix(border-radius, 8px 8px 0 0);
   position: relative;
 }
 
@@ -39,13 +39,13 @@
 
 .content>a {
   display: block;
-  color: #353535;
+  color: var(--dark-gray);
   text-decoration: none;
   width: fit-content;
   @include prefix(transition, color .3s);
 
   &:hover {
-    color: #000;
+    color: var(--black);
   }
 }
 
@@ -68,7 +68,7 @@
   @include prefix(transition, opacity .3s);
 
   &:hover {
-    opacity: 0.8;
+    opacity: .8;
   }
 
   &:active {
@@ -87,14 +87,14 @@
 }
 
 .buttons .repoButton {
-  background: #6363f3;
+  background: var(--light-purple);
 }
 
 .content .buttons button a {
   display: inline-block;
   text-decoration: none;
-  color: #fff;
+  color: var(--white);
   font-weight: bold;
   padding: 4px 16px;
-  border-radius: inherit;
+  @include prefix(border-radius, inherit);
 }
