@@ -6,7 +6,9 @@ import utility from "./_UtilityClasses.module.scss";
 const Project = ({ data }) => {
   let { homepage, html_url, name, description } = data;
   let userName = "Moamal-2000";
-  const websiteImgUrl = `https://raw.githubusercontent.com/${userName}/${name}/main/website.png`;
+  const [isOverlayActive, setIsOverlayActive] = useState(false);
+  const [srcImg, setSrcImg] = useState("");
+  const websiteImgUrl = `https://raw.githubusercontent.com/${userName}/${name}/main/website.webp`;
   const ignoredWebsitesNames = [
     "CV",
     "film-line-app",
@@ -14,9 +16,8 @@ const Project = ({ data }) => {
     "interactive-comments",
     "messenger-webpage",
     "multiple-sidebars",
+    "github-repo",
   ];
-  const [isOverlayActive, setIsOverlayActive] = useState(false);
-  const [srcImg, setSrcImg] = useState("");
 
   if (ignoredWebsitesNames.includes(name)) return null;
 
