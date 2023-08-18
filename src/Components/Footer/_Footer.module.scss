@@ -1,0 +1,78 @@
+@import "../../Sass/mixins";
+
+.footer {
+  margin-top: 80px;
+  padding: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+@media (max-width: 767px) {
+  .footer {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.copyright {
+  color: #b9b9b9;
+  font-size: .95rem;
+}
+
+@media (max-width: 767px) {
+  .copyright {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+}
+
+.copyright a {
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+  margin: 0 4px;
+  @include prefix(transition, color .2s);
+
+  &:hover {
+    color: #59d0e2;
+  }
+}
+
+.socialNav ul {
+  display: flex;
+  align-items: center;
+}
+
+.socialNav ul li {
+  list-style: none;
+  user-select: none;
+}
+
+.socialNav ul li:not(:last-child) {
+  margin-right: 20px;
+}
+
+.socialNav ul li i {
+  color: #0dbdd8;
+  font-size: 26px;
+}
+
+.socialNav ul li a {
+  text-decoration: none;
+}
+
+.socialNav ul li :is(a, img) {
+  opacity: .6;
+  @include prefix(transition, opacity .2s);
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.socialNav ul li img {
+  width: 26px;
+  object-fit: cover;
+  opacity: .9;
+}
