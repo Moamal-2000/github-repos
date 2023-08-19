@@ -6,7 +6,7 @@ export const staticReposData = [
     html_url: "https://github.com/Moamal-2000/paper",
     name: "paper",
     description: "",
-    id: v4()
+    id: v4(),
   },
   {
     homepage: "https://space-tourism-react-router.netlify.app",
@@ -31,7 +31,8 @@ export const staticReposData = [
   },
   {
     homepage: "https://stats-preview-card-react.netlify.app",
-    html_url: "https://github.com/Moamal-2000/stats-preview-card-component-main",
+    html_url:
+      "https://github.com/Moamal-2000/stats-preview-card-component-main",
     name: "stats-preview-card-component-main",
     description: "",
     id: v4(),
@@ -131,6 +132,13 @@ export const staticReposData = [
     homepage: "https://moamal-2000.github.io/desktop-css-draw",
     html_url: "https://github.com/Moamal-2000/desktop-css-draw",
     name: "desktop-css-draw",
+    description: "",
+    id: v4(),
+  },
+  {
+    homepage: "https://sunnyside-agency-landing-react.netlify.app",
+    html_url: "https://github.com/Moamal-2000/sunnyside-agency",
+    name: "sunnyside-agency",
     description: "",
     id: v4(),
   },

@@ -1,5 +1,5 @@
 import useFetchDataFrom from "../Hooks/useFetchDataFrom";
-import { staticReposData } from "./Data/staticReposData";
+import { staticReposData } from "../Data/staticReposData";
 import Project from "./Project";
 import utility from "./_UtilityClasses.module.scss";
 
