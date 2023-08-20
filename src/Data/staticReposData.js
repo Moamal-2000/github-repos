@@ -79,13 +79,13 @@ export const staticReposData = [
     description: "",
     id: v4(),
   },
-  {
-    homepage: "https://moamal-2000.github.io/products-filter",
-    html_url: "https://github.com/Moamal-2000/products-filter",
-    name: "products-filter",
-    description: "",
-    id: v4(),
-  },
+  // {
+  //   homepage: "https://moamal-2000.github.io/products-filter",
+  //   html_url: "https://github.com/Moamal-2000/products-filter",
+  //   name: "products-filter",
+  //   description: "",
+  //   id: v4(),
+  // },
   {
     homepage: "https://moamal-2000.github.io/testimonials-grid-section-main",
     html_url: "https://github.com/Moamal-2000/testimonials-grid-section-main",
