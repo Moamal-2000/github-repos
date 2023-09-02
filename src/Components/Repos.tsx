@@ -1,14 +1,15 @@
 import { staticReposData } from "../Data/staticReposData";
 import useFetchDataFrom from "../Hooks/useFetchDataFrom";
-import Project from "./Project";
+import { apiRepos, projects } from "../Types/app";
+import Project from "../components/Project";
 import utility from "./_UtilityClasses.module.scss";
 
 const Repos = () => {
-  let reposData = useFetchDataFrom(
+  let reposData: null | apiRepos = useFetchDataFrom(
     "https://api.github.com/users/Moamal-2000/repos"
   );
 
-  function removeDuplicatesByProperty(array, property) {
+  function removeDuplicatesByProperty(array: apiRepos, property: string) {
     const seen = new Set();
 
     const uniqueObjects = array.filter((item) => {
@@ -32,7 +33,7 @@ const Repos = () => {
     <div className="container">
       <div className={utility.repos}>
         {reposData &&
-          reposData.map((obj) => <Project data={obj} key={obj.id} />)}
+          reposData.map((obj: projects) => <Project data={obj} key={obj.id} />)}
       </div>
     </div>
   );

@@ -1,6 +1,12 @@
 import styles from "./_PreviewImage.module.scss";
 
-const PreviewImage = ({ src, isOverlayActive, setIsOverlayActive }) => {
+type props = {
+  src: string;
+  isOverlayActive: boolean,
+  setIsOverlayActive: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+const PreviewImage = ({ src, isOverlayActive, setIsOverlayActive }: props) => {
   return (
     <div
       className={`${styles.overlay} ${isOverlayActive ? styles.active : ""}`}
