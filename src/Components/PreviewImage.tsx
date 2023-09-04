@@ -1,6 +1,12 @@
 import styles from "./_PreviewImage.module.scss";
 
-const PreviewImage = ({ src, isOverlayActive, setIsOverlayActive }) => {
+interface Props {
+  src: string,
+  isOverlayActive: boolean,
+  setIsOverlayActive: (value: boolean) => void
+}
+
+const PreviewImage: React.FC<Props>  = ({ src, isOverlayActive, setIsOverlayActive }) => {
   return (
     <div
       className={`${styles.overlay} ${isOverlayActive ? styles.active : ""}`}

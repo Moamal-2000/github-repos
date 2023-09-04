@@ -1,5 +1,5 @@
-import Footer from "./Components/Footer/Footer";
-import Repos from "./Components/Repos";
+import Footer from "./components/Footer/Footer";
+import Repos from "./components/Repos";
 
 function App() {
   return (
