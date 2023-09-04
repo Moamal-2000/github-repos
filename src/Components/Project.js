@@ -1,17 +1,15 @@
 import { useState } from "react";
-import { projects } from "../Types/app";
-import PreviewImage from "../components/PreviewImage";
+import PreviewImage from "./PreviewImage";
 import styles from "./_Project.module.scss";
 import utility from "./_UtilityClasses.module.scss";
 
-const Project = ({ data }: projects) => {
-  const { html_url, name, description } = data;
-  let { homepage } = data;
-  const userName: string = "Moamal-2000";
-  const [isOverlayActive, setIsOverlayActive] = useState<boolean>(false);
-  const [srcImg, setSrcImg] = useState<string>("");
-  const websiteImgUrl: string = `https://raw.githubusercontent.com/${userName}/${name}/main/website.webp`;
-  const ignoredWebsitesNames: string[] = [
+const Project = ({ data }) => {
+  let { homepage, html_url, name, description } = data;
+  let userName = "Moamal-2000";
+  const [isOverlayActive, setIsOverlayActive] = useState(false);
+  const [srcImg, setSrcImg] = useState("");
+  const websiteImgUrl = `https://raw.githubusercontent.com/${userName}/${name}/main/website.webp`;
+  const ignoredWebsitesNames = [
     "CV",
     "film-line-app",
     "images",
@@ -28,13 +26,13 @@ const Project = ({ data }: projects) => {
     homepage = liveLink;
   }
 
-  function disableLink(e: React.MouseEvent<HTMLAnchorElement>) {
+  function disableLink(e) {
     if (!homepage) e.preventDefault();
   }
 
-  function handleClickImg(e: React.MouseEvent<HTMLImageElement>) {
+  function handleClickImg(e) {
     setIsOverlayActive(true);
-    setSrcImg(e.currentTarget.src);
+    setSrcImg(e.target.src);
   }
 
   return (
@@ -46,12 +44,11 @@ const Project = ({ data }: projects) => {
       />
 
       <div className={`${utility.project} ${styles.project}`}>
-        <div className={styles.img}>
+        <div className={styles.img} onClick={(e) => handleClickImg(e)}>
           <img
             src={websiteImgUrl}
-            onClick={(e: React.MouseEvent<HTMLImageElement>) => handleClickImg(e)}
-            onError={(e: React.SyntheticEvent<HTMLImageElement>) =>
-              (e.currentTarget.src = require("../images/placeholder-img.png"))
+            onError={(e) =>
+              (e.target.src = require("../images/placeholder-img.png"))
             }
             alt="Website"
           />
@@ -62,7 +59,7 @@ const Project = ({ data }: projects) => {
             href={homepage}
             target="_blank"
             rel="noreferrer"
-            onClick={(e: React.MouseEvent<HTMLAnchorElement>) => disableLink(e)}
+            onClick={(e) => disableLink(e)}
           >
             <h2>{name}</h2>
           </a>
@@ -77,9 +74,7 @@ const Project = ({ data }: projects) => {
                 href={homepage}
                 target="_blank"
                 rel="noreferrer"
-                onClick={(e: React.MouseEvent<HTMLAnchorElement>) =>
-                  disableLink(e)
-                }
+                onClick={(e) => disableLink(e)}
               >
                 Live
               </a>
