@@ -5,8 +5,8 @@ function App() {
   return (
     <>
       <div className="App">
-      <Repos />
-      <Footer />
+        <Repos />
+        <Footer />
       </div>
     </>
   );
