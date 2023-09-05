@@ -1,8 +1,8 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
+import axios from "axios";
 
-function useFetchDataFrom(url: string): null | [] {
-  const [data, setData] = useState<null | []>(null);
+export default function useFetchDataFrom(url) {
+  const [data, setData] = useState(null);
 
   useEffect(() => {
     const getData = async () => {
@@ -19,5 +19,3 @@ function useFetchDataFrom(url: string): null | [] {
 
   return data;
 }
-
-export default useFetchDataFrom;

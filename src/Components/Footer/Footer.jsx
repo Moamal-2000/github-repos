@@ -1,5 +1,5 @@
 import styles from "./_Footer.module.scss";
-import codewarsLogo from "../../images/codewars-icon.png"
+import codeWarsIcon from "../../images/codewars-icon.png"
 
 const Footer = () => {
   return (
@@ -66,7 +66,7 @@ const Footer = () => {
               rel="noreferrer"
             >
               <img
-                src={codewarsLogo}
+                src={codeWarsIcon}
                 alt="codewars icon"
               />
             </a>

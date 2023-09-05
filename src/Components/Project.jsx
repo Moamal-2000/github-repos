@@ -1,14 +1,12 @@
 import { useState } from "react";
-import { ProjectTypes } from "../Types/modelTypes";
 import PreviewImage from "./PreviewImage";
 import styles from "./_Project.module.scss";
 import utility from "./_UtilityClasses.module.scss";
-import placeholderUrlImg from "../images/placeholder-img.png"
+import placeHolderImg from "../images/placeholder-img.png"
 
-const Project: React.FC<ProjectTypes> = ({
-  data: { homepage, html_url, name, description },
-}) => {
-  const userName: string = "Moamal-2000";
+const Project = ({ data }) => {
+  let { homepage, html_url, name, description } = data;
+  let userName = "Moamal-2000";
   const [isOverlayActive, setIsOverlayActive] = useState(false);
   const [srcImg, setSrcImg] = useState("");
   const websiteImgUrl = `https://raw.githubusercontent.com/${userName}/${name}/main/website.webp`;
@@ -29,13 +27,13 @@ const Project: React.FC<ProjectTypes> = ({
     homepage = liveLink;
   }
 
-  function disableLink(e: React.MouseEvent<HTMLAnchorElement>) {
+  function disableLink(e) {
     if (!homepage) e.preventDefault();
   }
 
-  function handleClickImg(e: React.MouseEvent<HTMLImageElement>) {
+  function handleClickImg(e) {
     setIsOverlayActive(true);
-    setSrcImg(e.currentTarget.src);
+    setSrcImg(e.target.src);
   }
 
   return (
@@ -47,13 +45,12 @@ const Project: React.FC<ProjectTypes> = ({
       />
 
       <div className={`${utility.project} ${styles.project}`}>
-        <div className={styles.img}>
+        <div className={styles.img} onClick={(e) => handleClickImg(e)}>
           <img
             src={websiteImgUrl}
-            onError={(e: React.SyntheticEvent<HTMLImageElement>) =>
-              (e.currentTarget.src = placeholderUrlImg)
+            onError={(e) =>
+              (e.target.src = placeHolderImg)
             }
-            onClick={(e) => handleClickImg(e)}
             alt="Website"
           />
         </div>
