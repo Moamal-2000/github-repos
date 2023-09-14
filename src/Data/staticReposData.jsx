@@ -142,6 +142,13 @@ export const staticReposData = [
     description: "",
     id: uuid(),
   },
+  {
+    homepage: "https://superado-landing.netlify.app/",
+    html_url: "https://github.com/Moamal-2000/superado-landing",
+    name: "superado-landing",
+    description: "",
+    id: uuid(),
+  },
   // {
   //   homepage: "",
   //   html_url: "",
