@@ -1,5 +1,5 @@
+import codeWarsIcon from "../../images/codewars-icon.png";
 import styles from "./_Footer.module.scss";
-import codeWarsIcon from "../../images/codewars-icon.png"
 
 const Footer = () => {
   return (
@@ -27,12 +27,12 @@ const Footer = () => {
         <ul>
           <li>
             <a
-              href="https://www.facebook.com/MoamalAlaa109"
-              title="Link facebook profile"
+              href="https://github.com/Moamal-2000"
+              title="Link github profile"
               target="_blank"
               rel="noreferrer"
             >
-              <i className="fa-brands fa-facebook"></i>
+              <i className="fa-brands fa-github"></i>
             </a>
           </li>
 
@@ -65,10 +65,18 @@ const Footer = () => {
               target="_blank"
               rel="noreferrer"
             >
-              <img
-                src={codeWarsIcon}
-                alt="codewars icon"
-              />
+              <img src={codeWarsIcon} alt="codewars icon" />
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="https://www.facebook.com/MoamalAlaa109"
+              title="Link facebook profile"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <i className="fa-brands fa-facebook"></i>
             </a>
           </li>
         </ul>
