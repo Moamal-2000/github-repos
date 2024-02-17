@@ -11,13 +11,10 @@ const Project = ({ data }) => {
   const [srcImg, setSrcImg] = useState("");
   const websiteImgUrl = `https://raw.githubusercontent.com/${userName}/${name}/main/website.webp`;
   const ignoredWebsitesNames = [
-    "CV",
-    "film-line-app",
     "images",
-    "interactive-comments",
-    "messenger-webpage",
-    "multiple-sidebars",
     "github-repo",
+    "zcode",
+    "testing-react3"
   ];
 
   if (ignoredWebsitesNames.includes(name)) return null;
