@@ -53,9 +53,10 @@
   margin-right: 30px;
 }
 
-.socialNav ul li i {
-  color: var(--cyan-green);
-  font-size: 26px;
+.socialNav ul li svg {
+  fill: var(--cyan-green);
+  width: 27px;
+  height: 27px;
 }
 
 .socialNav ul li a {

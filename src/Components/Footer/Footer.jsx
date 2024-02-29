@@ -1,4 +1,5 @@
-import codeWarsIcon from "../../Images/codewars-icon.png";
+import codeWarsIcon from "../../Images/codewars-icon.webp";
+import SvgIcon from "../Shared/SvgIcon";
 import styles from "./Footer.module.scss";
 
 const Footer = () => {
@@ -32,7 +33,7 @@ const Footer = () => {
               target="_blank"
               rel="noreferrer"
             >
-              <i className="fa-brands fa-github"></i>
+              <SvgIcon name="github" />
             </a>
           </li>
 
@@ -43,7 +44,7 @@ const Footer = () => {
               target="_blank"
               rel="noreferrer"
             >
-              <i className="fa-brands fa-linkedin"></i>
+              <SvgIcon name="linkedin" />
             </a>
           </li>
 
@@ -54,7 +55,7 @@ const Footer = () => {
               target="_blank"
               rel="noreferrer"
             >
-              <i className="fa-brands fa-codepen"></i>
+              <SvgIcon name="codePen" />
             </a>
           </li>
 
@@ -76,7 +77,7 @@ const Footer = () => {
               target="_blank"
               rel="noreferrer"
             >
-              <i className="fa-brands fa-facebook"></i>
+              <SvgIcon name="facebook" />
             </a>
           </li>
         </ul>
