@@ -1,8 +1,8 @@
 import { useState } from "react";
+import placeHolderImg from "../../Images/placeholder-img.png";
 import PreviewImage from "./PreviewImage";
 import styles from "./Project.module.scss";
 import utility from "./UtilityClasses.module.scss";
-import placeHolderImg from "../../Images/placeholder-img.png"
 
 const Project = ({ data }) => {
   let { homepage, html_url, name, description } = data;
@@ -14,7 +14,7 @@ const Project = ({ data }) => {
     "images",
     "github-repo",
     "zcode",
-    "testing-react3"
+    "testing-react3",
   ];
 
   if (ignoredWebsitesNames.includes(name)) return null;
@@ -45,10 +45,9 @@ const Project = ({ data }) => {
         <div className={styles.img} onClick={(e) => handleClickImg(e)}>
           <img
             src={websiteImgUrl}
-            onError={(e) =>
-              (e.target.src = placeHolderImg)
-            }
-            alt="Website"
+            onError={(e) => (e.target.src = placeHolderImg)}
+            alt="Website image"
+            decoding="async"
           />
         </div>
 
