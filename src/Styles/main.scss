@@ -1,4 +1,5 @@
 @import "./colors.scss";
+@import "./fonts.css";
 
 * {
   padding: 0;
@@ -7,7 +8,7 @@
 }
 
 body {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Ubuntu';
   background-color: var(--very-dark);
   color: var(--white);
 }

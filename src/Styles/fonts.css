@@ -1,0 +1,28 @@
+/* Ubuntu */
+@font-face {
+  src: url("../Fonts/Ubuntu/Ubuntu-Light.ttf");
+  font-family: "Ubuntu";
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  src: url("../Fonts/Ubuntu/Ubuntu-Regular.ttf");
+  font-family: "Ubuntu";
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  src: url("../Fonts/Ubuntu/Ubuntu-Medium.ttf");
+  font-family: "Ubuntu";
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  src: url("../Fonts/Ubuntu/Ubuntu-Bold.ttf");
+  font-family: "Ubuntu";
+  font-weight: 700;
+  font-style: normal;
+}
