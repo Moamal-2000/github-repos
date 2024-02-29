@@ -6,10 +6,10 @@ import placeHolderImg from "../../Images/placeholder-img.png"
 
 const Project = ({ data }) => {
   let { homepage, html_url, name, description } = data;
-  let userName = "Moamal-2000";
+  const USERNAME = "Moamal-2000";
   const [isOverlayActive, setIsOverlayActive] = useState(false);
   const [srcImg, setSrcImg] = useState("");
-  const websiteImgUrl = `https://raw.githubusercontent.com/${userName}/${name}/main/website.webp`;
+  const websiteImgUrl = `https://raw.githubusercontent.com/${USERNAME}/${name}/main/website.webp`;
   const ignoredWebsitesNames = [
     "images",
     "github-repo",
@@ -24,13 +24,13 @@ const Project = ({ data }) => {
     homepage = liveLink;
   }
 
-  function disableLink(e) {
-    if (!homepage) e.preventDefault();
-  }
-
   function handleClickImg(e) {
     setIsOverlayActive(true);
     setSrcImg(e.target.src);
+  }
+
+  function disableLink(e) {
+    if (!homepage) e.preventDefault();
   }
 
   return (
