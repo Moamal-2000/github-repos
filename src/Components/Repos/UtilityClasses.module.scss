@@ -8,11 +8,15 @@
   gap: 20px;
   column-gap: 16px;
   margin: 60px 0;
-  @include prefix(transition, opacity .3s);
+  transition: opacity .3s;
+}
+
+.repos .project:not(:hover) {
+  opacity: .7;
 }
 
 @include small {
   .repos .project:not(:hover) {
-    opacity: .7;
+    opacity: 1;
   }
 }
