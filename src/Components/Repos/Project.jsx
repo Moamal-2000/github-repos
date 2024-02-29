@@ -2,7 +2,7 @@ import { useState } from "react";
 import PreviewImage from "./PreviewImage";
 import styles from "./_Project.module.scss";
 import utility from "./_UtilityClasses.module.scss";
-import placeHolderImg from "../images/placeholder-img.png"
+import placeHolderImg from "../../images/placeholder-img.png"
 
 const Project = ({ data }) => {
   let { homepage, html_url, name, description } = data;

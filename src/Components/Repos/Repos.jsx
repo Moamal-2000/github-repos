@@ -1,5 +1,5 @@
-import { staticReposData } from "../Data/staticReposData";
-import useFetchDataFrom from "../Hooks/useFetchDataFrom";
+import { staticReposData } from "../../Data/staticReposData";
+import useFetchDataFrom from "../../Hooks/useFetchDataFrom";
 import Project from "./Project";
 import utility from "./_UtilityClasses.module.scss";
 
@@ -29,11 +29,8 @@ const Repos = () => {
   }
 
   return (
-    <div className="container">
-      <div className={utility.repos}>
-        {reposData &&
-          reposData.map((obj) => <Project data={obj} key={obj.id} />)}
-      </div>
+    <div className={utility.repos}>
+      {reposData && reposData.map((obj) => <Project data={obj} key={obj.id} />)}
     </div>
   );
 };

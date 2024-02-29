@@ -1,10 +1,10 @@
 import Footer from "./Components/Footer/Footer";
-import Repos from "./Components/Repos";
+import Home from "./Components/home/Home";
 
 function App() {
   return (
     <>
-      <Repos />
+      <Home />
       <Footer />
     </>
   );
