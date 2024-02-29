@@ -4,8 +4,8 @@
   background-color: var(--white);
   user-select: none;
   width: 100%;
-  @include prefix(border-radius, 8px);
-  @include prefix(transition, opacity .3s);
+  border-radius: 8px;
+  transition: opacity .3s;
 }
 
 @media (max-width: 658px) and (min-width: 376px) {
@@ -20,16 +20,16 @@
   min-height: 224px;
   overflow: hidden;
   cursor: pointer;
-  @include prefix(border-radius, 8px 8px 0 0);
+  border-radius: 8px 8px 0 0;
   position: relative;
 }
 
 .img img {
   border-radius: inherit;
-  @include prefix(transition, transform .4s);
+  transition: transform .4s;
 
   .project:hover & {
-    @include prefix(transform, scale(1.01));
+    transform: scale(1.01);
   }
 }
 
@@ -42,7 +42,7 @@
   color: var(--dark-gray);
   text-decoration: none;
   width: fit-content;
-  @include prefix(transition, color .3s);
+  transition: color .3s;
 
   &:hover {
     color: var(--black);
@@ -64,15 +64,15 @@
 .content .buttons button {
   border: none;
   cursor: pointer;
-  @include prefix(border-radius, 4px);
-  @include prefix(transition, opacity .3s);
+  border-radius: 4px;
+  transition: opacity .3s;
 
   &:hover {
     opacity: .8;
   }
 
   &:active {
-    @include prefix(transform, scale(.99));
+    transform: scale(.99);
   }
 }
 
@@ -81,8 +81,7 @@
   background: linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E);
 
   &.disabled {
-    filter: grayscale(1);
-    -webkit-filter: grayscale(1);
+    @include prefix(filter, grayscale(1))
   }
 }
 
@@ -96,5 +95,5 @@
   color: var(--white);
   font-weight: bold;
   padding: 4px 16px;
-  @include prefix(border-radius, inherit);
+  border-radius: inherit;
 }

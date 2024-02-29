@@ -7,12 +7,12 @@
   width: 100%;
   height: 100%;
   z-index: 1000;
-  background-color: rgba(0, 0, 0, .8);
+  background-color: var(--black-opacity8);
   user-select: none;
   opacity: 0;
   pointer-events: none;
   @include center-x-y;
-  @include prefix(transition, opacity .3s);
+  transition: opacity .3s;
 
   &.active {
     opacity: 1;
@@ -20,7 +20,7 @@
   }
 }
 
-@media (max-width: 1200px) {
+@include large {
   .overlay {
     display: none;
   }

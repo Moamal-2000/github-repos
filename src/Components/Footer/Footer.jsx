@@ -1,5 +1,5 @@
-import codeWarsIcon from "../../images/codewars-icon.png";
-import styles from "./_Footer.module.scss";
+import codeWarsIcon from "../../Images/codewars-icon.png";
+import styles from "./Footer.module.scss";
 
 const Footer = () => {
   return (

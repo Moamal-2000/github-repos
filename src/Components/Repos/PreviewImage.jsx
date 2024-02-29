@@ -1,4 +1,4 @@
-import styles from "./_PreviewImage.module.scss";
+import styles from "./PreviewImage.module.scss";
 
 const PreviewImage = ({ src, isOverlayActive, setIsOverlayActive }) => {
   return (
