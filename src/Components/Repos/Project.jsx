@@ -33,6 +33,11 @@ const Project = ({ data }) => {
     if (!homepage) e.preventDefault();
   }
 
+  function setLoadingImgState() {
+    const isImgUrlContainsLCP = websiteImgUrl.includes("age-calculator-app");
+    return isImgUrlContainsLCP ? "eager" : "lazy";
+  }
+
   return (
     <>
       <PreviewImage
@@ -51,7 +56,7 @@ const Project = ({ data }) => {
             onError={(e) => (e.target.src = placeHolderImg)}
             alt="Website image"
             decoding="async"
-            loading="lazy"
+            loading={setLoadingImgState()}
           />
         </div>
 
