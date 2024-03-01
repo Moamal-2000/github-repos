@@ -51,6 +51,7 @@ const Project = ({ data }) => {
             onError={(e) => (e.target.src = placeHolderImg)}
             alt="Website image"
             decoding="async"
+            loading="lazy"
           />
         </div>
 
