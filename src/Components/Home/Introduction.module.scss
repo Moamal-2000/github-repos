@@ -1,0 +1,35 @@
+@import "../../Styles/mixins";
+
+.introduction {
+  max-width: 700px;
+  margin: 50px 0 100px;
+  color: var(--white);
+}
+
+@media (max-width: 376px) {
+  .introduction {
+    margin: 20px 0 0;
+  }
+}
+
+.introduction p {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  margin: 16px 0;
+}
+
+@include small {
+  .introduction p {
+    font-size: 1rem;
+  }
+}
+
+.introduction a {
+  color: var(--light-blue);
+  text-decoration: none;
+  margin-left: 5px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
