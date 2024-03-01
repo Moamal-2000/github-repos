@@ -4,27 +4,32 @@ import { removeDuplicatesByProperty } from "../../Functions/helper";
 import useAsync from "../../Hooks/useAsync";
 import Project from "./Project";
 import utility from "./UtilityClasses.module.scss";
+import useOnlineStatus from "../../Hooks/useOnlineStatus";
 
 const MY_REPOS_API = "https://api.github.com/users/Moamal-2000/repos";
 
 const Repos = () => {
-  const [reposData, setReposData, isError, isLoading] = useAsync(MY_REPOS_API);
+  const isWebsiteOnline = useOnlineStatus()
+  const [reposData, setReposData, _, isLoading] = useAsync(MY_REPOS_API, {}, [isWebsiteOnline]);
+
+  function updateReposData() {
+    const mergedReposData = [...reposData, ...staticReposData];
+    const uniqueReposData = removeDuplicatesByProperty(mergedReposData, "name");
+    setReposData(uniqueReposData);
+  }
 
   useEffect(() => {
-    if (!reposData) return;
-
-    const reposDataClone = [...[...reposData, ...staticReposData]];
-    const uniqueArray = removeDuplicatesByProperty(reposDataClone, "name");
-    setReposData(uniqueArray);
-  }, []);
-
-  if (isError) return <p>Error while fetching data.</p>;
-  if (isLoading) return <p>Loading ...</p>;
+    updateReposData();
+  }, [isWebsiteOnline]);
 
   return (
-    <div className={utility.repos}>
-      {reposData && reposData.map((obj) => <Project data={obj} key={obj.id} />)}
-    </div>
+    <>
+      {isLoading && <p>Loading ...</p>}
+      <div className={utility.repos}>
+        {reposData &&
+          reposData.map((obj) => <Project data={obj} key={obj.id} />)}
+      </div>
+    </>
   );
 };
 

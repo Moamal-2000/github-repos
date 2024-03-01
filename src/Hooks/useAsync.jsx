@@ -5,7 +5,7 @@ const useAsync = (api, options = {}, dependencies = []) => {
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   const [isDone, setIsDone] = useState(false);
-  const [data, setData] = useState(null);
+  const [data, setData] = useState([]);
 
   async function fetchData() {
     setIsDone(false);
@@ -15,7 +15,7 @@ const useAsync = (api, options = {}, dependencies = []) => {
       setData(res.data);
     } catch (err) {
       setIsError(true);
-      throw new Error(err);
+      console.log(err.message);
     } finally {
       setIsLoading(false);
       setIsDone(true);
