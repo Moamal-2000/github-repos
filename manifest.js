@@ -51,7 +51,7 @@ export const manifestForPlugin = {
     background_color: "#ffffff",
     display: "standalone",
     scope: "/",
-    start_url: "https://github-repos-react.netlify.app/",
+    start_url: "https://main--github-repos-react.netlify.app/",
     orientation: "portrait",
   },
 };
