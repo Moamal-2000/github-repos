@@ -28,14 +28,18 @@
 }
 
 .copyright a {
-  color: var(--white);
-  text-decoration: none;
   display: inline-block;
+  outline: none;
   margin: 0 4px;
+  color: var(--white);
   transition: color .2s;
 
-  &:hover {
+  &:where(:hover, :focus-visible) {
     color: var(--light-cyan-green);
+  }
+
+  &:focus-visible {
+    border-bottom: solid 2px var(--light-cyan-green);
   }
 }
 
@@ -49,31 +53,43 @@
   user-select: none;
 }
 
-.socialNav ul li:not(:last-child) {
-  margin-right: 30px;
-}
-
-.socialNav ul li svg {
-  fill: var(--cyan-green);
-  width: 27px;
-  height: 27px;
-}
-
 .socialNav ul li a {
-  text-decoration: none;
-}
+  display: block;
+  border-radius: 6px;
+  padding: 10px;
+  @include prefix(filter, grayscale(1));
 
-.socialNav ul li :is(a, img) {
-  opacity: .6;
-  transition: opacity .2s;
-
-  &:hover {
+  &:focus-visible {
+    transition: opacity .3s, filter .3s .2s;
+    outline: solid 2px var(--cyan-green);
+    @include prefix(filter, grayscale(0));
     opacity: 1;
   }
 }
 
+.socialNav ul li:not(:last-child) {
+  margin-right: 20px;
+}
+
+.socialNav ul li svg {
+  fill: var(--cyan-green);
+  width: 22px;
+  height: 22px;
+}
+
+.socialNav ul li :where(a, img) {
+  opacity: .8;
+  transition: opacity .3s;
+
+  &:hover {
+    opacity: 1;
+    @include prefix(filter, grayscale(0));
+  }
+}
+
 .socialNav ul li img {
-  width: 26px;
+  max-width: 23px;
+  min-width: 23px;
   object-fit: cover;
   opacity: .9;
 }

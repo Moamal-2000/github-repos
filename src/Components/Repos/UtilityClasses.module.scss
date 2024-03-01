@@ -15,6 +15,14 @@
   opacity: .7;
 }
 
+.repos .project:focus-visible {
+  opacity: 1;
+}
+
+.repos .project:has(:focus-visible) {
+  opacity: 1;
+}
+
 @include small {
   .repos .project:not(:hover) {
     opacity: 1;

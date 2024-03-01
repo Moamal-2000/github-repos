@@ -2,7 +2,7 @@ import styles from "./Introduction.module.scss";
 
 const Introduction = () => {
   return (
-    <section className={styles.introduction}>
+    <section className={styles.introduction} tabIndex="0">
       <h1>My GitHub Projects</h1>
 
       <p>

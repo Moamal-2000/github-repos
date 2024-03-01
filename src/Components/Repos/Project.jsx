@@ -41,8 +41,11 @@ const Project = ({ data }) => {
         setIsOverlayActive={setIsOverlayActive}
       />
 
-      <div className={`${utility.project} ${styles.project}`}>
-        <div className={styles.img} onClick={(e) => handleClickImg(e)}>
+      <div className={`${utility.project} ${styles.project}`} tabIndex="0">
+        <div
+          className={styles.placeHolderImg}
+          onClick={(e) => handleClickImg(e)}
+        >
           <img
             src={websiteImgUrl}
             onError={(e) => (e.target.src = placeHolderImg)}
@@ -56,31 +59,33 @@ const Project = ({ data }) => {
             href={homepage}
             target="_blank"
             rel="noreferrer"
+            className={styles.websiteName}
             onClick={(e) => disableLink(e)}
           >
-            <h2>{name}</h2>
+            {name}
           </a>
+
           <div className={styles.buttons}>
-            <button
+            <a
+              onClick={(e) => disableLink(e)}
               className={`${styles.liveButton} ${
                 !homepage ? styles.disabled : ""
               }`}
-              type="button"
+              href={homepage}
+              target="_blank"
+              rel="noreferrer"
             >
-              <a
-                href={homepage}
-                target="_blank"
-                rel="noreferrer"
-                onClick={(e) => disableLink(e)}
-              >
-                Live
-              </a>
-            </button>
-            <button className={styles.repoButton} type="button">
-              <a href={html_url} target="_blank" rel="noreferrer">
-                Repo
-              </a>
-            </button>
+              Live
+            </a>
+
+            <a
+              className={styles.repoButton}
+              href={html_url}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Repo
+            </a>
           </div>
         </div>
       </div>
