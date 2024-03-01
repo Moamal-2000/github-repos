@@ -9,7 +9,7 @@ const PreviewImage = ({ src, isOverlayActive, setIsOverlayActive }) => {
       onClick={() => setIsOverlayActive(false)}
     >
       <div className={styles.imgHolder}>
-        <img src={src} alt="preview website" />
+        <img src={src} alt="preview website" decoding="async" />
       </div>
     </div>
   );

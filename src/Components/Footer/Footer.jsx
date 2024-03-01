@@ -66,7 +66,12 @@ const Footer = () => {
               target="_blank"
               rel="noreferrer"
             >
-              <img src={codeWarsIcon} alt="codewars icon" />
+              <img
+                src={codeWarsIcon}
+                alt="codewars icon"
+                decoding="async"
+                loading="lazy"
+              />
             </a>
           </li>
 
