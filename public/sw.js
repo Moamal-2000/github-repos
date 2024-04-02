@@ -1,6 +1,4 @@
-"use strict";
-
-const CACHE_NAME = "github-repos-v1";
+const CACHE_NAME = "github-repos-v2";
 const assets = ["/", "/index.html"];
 
 async function caching() {
