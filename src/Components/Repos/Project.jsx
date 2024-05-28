@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { IGNORED_WEBSITES_NAMES, MY_GITHUB_NAME } from "../../Data/variables";
-import placeHolderImg from "../../Images/placeholder-img.png";
+import placeHolderImg from "../../Images/placeholder-img.webp";
 import PreviewImage from "./PreviewImage";
 import styles from "./Project.module.scss";
 import utility from "./UtilityClasses.module.scss";
@@ -49,7 +49,7 @@ const Project = ({ data }) => {
           <img
             src={websiteImgUrl}
             onError={(e) => (e.target.src = placeHolderImg)}
-            alt="Website image"
+            alt={repoName}
             decoding="async"
             loading={setLoadingImgState()}
           />
