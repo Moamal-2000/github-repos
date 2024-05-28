@@ -1,24 +1,18 @@
 import { useState } from "react";
+import { IGNORED_WEBSITES_NAMES, MY_GITHUB_NAME } from "../../Data/variables";
 import placeHolderImg from "../../Images/placeholder-img.png";
 import PreviewImage from "./PreviewImage";
 import styles from "./Project.module.scss";
 import utility from "./UtilityClasses.module.scss";
 
 const Project = ({ data }) => {
-  let { homepage, html_url, name, description } = data;
-  const USERNAME = "Moamal-2000";
+  let { homepage, html_url, name: repoName, description } = data;
   const [isOverlayActive, setIsOverlayActive] = useState(false);
   const [srcImg, setSrcImg] = useState("");
-  const websiteImgUrl = `https://raw.githubusercontent.com/${USERNAME}/${name}/main/website.webp`;
-  const ignoredWebsitesNames = [
-    "images",
-    "github-repos",
-    "zcode",
-    "testing-react3",
-    "learning-pwa"
-  ];
+  const baseUrl = "https://raw.githubusercontent.com";
+  const websiteImgUrl = `${baseUrl}/${MY_GITHUB_NAME}/${repoName}/main/website.webp`;
 
-  if (ignoredWebsitesNames.includes(name)) return null;
+  if (IGNORED_WEBSITES_NAMES.includes(repoName)) return null;
 
   if (!homepage) {
     const liveLink = description?.split(" ")[1];
@@ -69,7 +63,7 @@ const Project = ({ data }) => {
             className={styles.websiteName}
             onClick={(e) => disableLink(e)}
           >
-            {name}
+            {repoName}
           </a>
 
           <div className={styles.buttons}>

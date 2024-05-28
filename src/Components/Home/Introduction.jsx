@@ -1,3 +1,4 @@
+import { MY_EMAIL } from "../../Data/variables";
 import styles from "./Introduction.module.scss";
 
 const Introduction = () => {
@@ -12,8 +13,7 @@ const Introduction = () => {
 
       <p>
         Have a question, suggestion, or just want to say hi? Feel free to reach
-        out to me via email at{" "}
-        <a href="mailto:moamalalaapro1@email.com">moamalalaapro1@email.com</a>.
+        out to me via email at <a href={`mailto:${MY_EMAIL}`}>{MY_EMAIL}</a>.
       </p>
     </section>
   );
