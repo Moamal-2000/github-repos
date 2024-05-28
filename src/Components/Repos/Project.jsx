@@ -12,9 +12,10 @@ const Project = ({ data }) => {
   const websiteImgUrl = `https://raw.githubusercontent.com/${USERNAME}/${name}/main/website.webp`;
   const ignoredWebsitesNames = [
     "images",
-    "github-repo",
+    "github-repos",
     "zcode",
     "testing-react3",
+    "learning-pwa"
   ];
 
   if (ignoredWebsitesNames.includes(name)) return null;
