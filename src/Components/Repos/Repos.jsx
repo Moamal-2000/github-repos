@@ -5,7 +5,7 @@ import { removeDuplicatesByProperty } from "../../Functions/helper";
 import useAsync from "../../Hooks/useAsync";
 import useOnlineStatus from "../../Hooks/useOnlineStatus";
 import Project from "./Project";
-import utility from "./UtilityClasses.module.scss";
+import u from "./UtilityClasses.module.scss";
 
 const Repos = () => {
   const isWebsiteOnline = useOnlineStatus();
@@ -26,7 +26,7 @@ const Repos = () => {
   return (
     <>
       {isLoading && <p>Loading ...</p>}
-      <div className={utility.repos}>
+      <div className={u.repos}>
         {reposData?.map((obj) => (
           <Project data={obj} key={obj.id} />
         ))}

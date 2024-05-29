@@ -1,9 +1,9 @@
 import { MY_EMAIL } from "../../Data/variables";
-import styles from "./Introduction.module.scss";
+import s from "./Introduction.module.scss";
 
 const Introduction = () => {
   return (
-    <section className={styles.introduction} tabIndex="0">
+    <section className={s.introduction} tabIndex="0">
       <h1>My GitHub Projects</h1>
 
       <p>

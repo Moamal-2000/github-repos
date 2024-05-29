@@ -1,11 +1,11 @@
 import codeWarsIcon from "../../Images/codewars-icon.webp";
 import SvgIcon from "../Shared/SvgIcon";
-import styles from "./Footer.module.scss";
+import s from "./Footer.module.scss";
 
 const Footer = () => {
   return (
-    <footer className={styles.footer}>
-      <p className={styles.copyright}>
+    <footer className={s.footer}>
+      <p className={s.copyright}>
         Coded in
         <a
           href="https://code.visualstudio.com"
@@ -24,7 +24,7 @@ const Footer = () => {
         </a>
       </p>
 
-      <nav className={styles.socialNav}>
+      <nav className={s.socialNav}>
         <ul>
           <li>
             <a

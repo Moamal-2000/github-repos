@@ -1,14 +1,14 @@
-import styles from "./PreviewImage.module.scss";
+import s from "./PreviewImage.module.scss";
 
 const PreviewImage = ({ src, isOverlayActive, setIsOverlayActive }) => {
-  const activeClass = isOverlayActive ? styles.active : "";
+  const activeClass = isOverlayActive ? s.active : "";
 
   return (
     <div
-      className={`${styles.overlay} ${activeClass}`}
+      className={`${s.overlay} ${activeClass}`}
       onClick={() => setIsOverlayActive(false)}
     >
-      <div className={styles.imgHolder}>
+      <div className={s.imgHolder}>
         <img src={src} alt="preview website" decoding="async" />
       </div>
     </div>

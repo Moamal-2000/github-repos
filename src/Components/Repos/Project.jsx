@@ -2,8 +2,8 @@ import { useState } from "react";
 import { IGNORED_WEBSITES_NAMES, MY_GITHUB_NAME } from "../../Data/variables";
 import placeHolderImg from "../../Images/placeholder-img.webp";
 import PreviewImage from "./PreviewImage";
-import styles from "./Project.module.scss";
-import utility from "./UtilityClasses.module.scss";
+import s from "./Project.module.scss";
+import u from "./UtilityClasses.module.scss";
 
 const Project = ({ data }) => {
   let { homepage, html_url, name: repoName, description } = data;
@@ -41,11 +41,8 @@ const Project = ({ data }) => {
         setIsOverlayActive={setIsOverlayActive}
       />
 
-      <div className={`${utility.project} ${styles.project}`} tabIndex="0">
-        <div
-          className={styles.placeHolderImg}
-          onClick={(e) => handleClickImg(e)}
-        >
+      <div className={`${u.project} ${s.project}`} tabIndex="0">
+        <div className={s.placeHolderImg} onClick={(e) => handleClickImg(e)}>
           <img
             src={websiteImgUrl}
             onError={(e) => (e.target.src = placeHolderImg)}
@@ -55,23 +52,21 @@ const Project = ({ data }) => {
           />
         </div>
 
-        <div className={styles.content}>
+        <div className={s.content}>
           <a
             href={homepage}
             target="_blank"
             rel="noreferrer"
-            className={styles.websiteName}
+            className={s.websiteName}
             onClick={(e) => disableLink(e)}
           >
             {repoName}
           </a>
 
-          <div className={styles.buttons}>
+          <div className={s.buttons}>
             <a
               onClick={(e) => disableLink(e)}
-              className={`${styles.liveButton} ${
-                !homepage ? styles.disabled : ""
-              }`}
+              className={`${s.liveButton} ${!homepage ? s.disabled : ""}`}
               href={homepage}
               target="_blank"
               rel="noreferrer"
@@ -80,7 +75,7 @@ const Project = ({ data }) => {
             </a>
 
             <a
-              className={styles.repoButton}
+              className={s.repoButton}
               href={html_url}
               target="_blank"
               rel="noreferrer"
