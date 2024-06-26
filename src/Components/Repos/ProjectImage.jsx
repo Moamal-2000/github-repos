@@ -1,21 +1,15 @@
-import { useState } from "react";
 import { getWebsiteImage } from "src/Functions/helper";
 import placeHolderImg from "src/Images/placeholder-img.webp";
-import s from "./Project.module.scss";
+import { useGlobalContext } from "../../Context/GlobalContext";
+import s from "./ProjectImage.module.scss";
 
-const ProjectImage = ({repoName}) => {
-  const [isOverlayActive, setIsOverlayActive] = useState(false);
-  const [srcImg, setSrcImg] = useState("");
+const ProjectImage = ({ repoName }) => {
+  const { setIsOverlayActive, setPreviewImg } = useGlobalContext();
   const websiteImgUrl = getWebsiteImage(repoName);
 
   function handleClickImg(e) {
     setIsOverlayActive(true);
-    setSrcImg(e.target.src);
-  }
-
-  function setLoadingImgState() {
-    const isImgUrlContainsLCP = websiteImgUrl.includes("age-calculator-app");
-    return isImgUrlContainsLCP ? "eager" : "lazy";
+    setPreviewImg(e.target.src);
   }
 
   return (
@@ -25,9 +19,14 @@ const ProjectImage = ({repoName}) => {
         onError={(e) => (e.target.src = placeHolderImg)}
         alt={repoName}
         decoding="async"
-        loading={setLoadingImgState()}
+        loading={setLoadingImgState(websiteImgUrl)}
       />
     </div>
   );
 };
 export default ProjectImage;
+
+function setLoadingImgState(websiteImgUrl) {
+  const isImgUrlContainsLCP = websiteImgUrl.includes("age-calculator-app");
+  return isImgUrlContainsLCP ? "eager" : "lazy";
+}
