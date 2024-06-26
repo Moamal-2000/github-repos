@@ -18,11 +18,13 @@ const PreviewImage = () => {
     document.body.style.overflow = isPreviewActive ? "hidden" : "";
   }
 
-  useEffect(() => toggleScrollBar(), [isPreviewActive]);
-  useEffect(() => {
+  function handleResizeWindow() {
     if (isLaptopWindow) closeOverlay();
     else document.body.style.overflow = "";
-  }, [windowWidth]);
+  }
+
+  useEffect(() => toggleScrollBar(), [isPreviewActive]);
+  useEffect(() => handleResizeWindow(), [windowWidth]);
 
   return (
     <div className={`${s.imgHolder} ${activeClass}`} onClick={closeOverlay}>
