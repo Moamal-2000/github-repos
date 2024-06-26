@@ -1,4 +1,4 @@
-import { MY_EMAIL } from "../../Data/variables";
+import { MY_EMAIL } from "src/Data/variables";
 import s from "./Introduction.module.scss";
 
 const Introduction = () => {

@@ -1,9 +1,9 @@
 import { useEffect } from "react";
-import { staticReposData } from "../../Data/staticReposData";
-import { MY_REPOS_URL } from "../../Data/variables";
-import { removeDuplicatesByProperty } from "../../Functions/helper";
-import useAsync from "../../Hooks/useAsync";
-import useOnlineStatus from "../../Hooks/useOnlineStatus";
+import { staticReposData } from "src/Data/staticReposData";
+import { MY_REPOS_URL } from "src/Data/variables";
+import { removeDuplicatesByProperty } from "src/Functions/helper";
+import useAsync from "src/Hooks/useAsync";
+import useOnlineStatus from "src/Hooks/useOnlineStatus";
 import Project from "./Project";
 import u from "./UtilityClasses.module.scss";
 

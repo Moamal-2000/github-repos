@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { IGNORED_WEBSITES_NAMES, MY_GITHUB_NAME } from "../../Data/variables";
-import placeHolderImg from "../../Images/placeholder-img.webp";
+import { IGNORED_WEBSITES_NAMES, MY_GITHUB_NAME } from "src/Data/variables";
+import placeHolderImg from "src/Images/placeholder-img.webp";
 import PreviewImage from "./PreviewImage";
 import s from "./Project.module.scss";
 import u from "./UtilityClasses.module.scss";

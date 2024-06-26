@@ -1,4 +1,4 @@
-import codeWarsIcon from "../../Images/codewars-icon.webp";
+import codeWarsIcon from "src/Images/codewars-icon.webp";
 import SvgIcon from "../Shared/SvgIcon";
 import s from "./Footer.module.scss";
 
