@@ -2,12 +2,12 @@ import { useGlobalContext } from "../../Context/GlobalContext";
 import s from "./PreviewImage.module.scss";
 
 const PreviewImage = () => {
-  const { setIsOverlayActive, isOverlayActive, previewImg } =
+  const { setIsPreviewActive, isPreviewActive, previewImg } =
     useGlobalContext();
-  const activeClass = isOverlayActive ? s.active : "";
+  const activeClass = isPreviewActive ? s.active : "";
 
   function closeOverlay() {
-    setIsOverlayActive(false);
+    setIsPreviewActive(false);
   }
 
   return (

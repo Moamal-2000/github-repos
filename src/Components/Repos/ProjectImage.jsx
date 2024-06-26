@@ -4,11 +4,11 @@ import { useGlobalContext } from "../../Context/GlobalContext";
 import s from "./ProjectImage.module.scss";
 
 const ProjectImage = ({ repoName }) => {
-  const { setIsOverlayActive, setPreviewImg } = useGlobalContext();
+  const { setIsPreviewActive, setPreviewImg } = useGlobalContext();
   const websiteImgUrl = getWebsiteImage(repoName);
 
   function handleClickImg(e) {
-    setIsOverlayActive(true);
+    setIsPreviewActive(true);
     setPreviewImg(e.target.src);
   }
 
