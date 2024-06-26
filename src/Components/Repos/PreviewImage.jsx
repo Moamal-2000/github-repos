@@ -1,4 +1,4 @@
-import { useGlobalContext } from "../../Context/GlobalContext";
+import { useGlobalContext } from "src/Context/GlobalContext";
 import s from "./PreviewImage.module.scss";
 
 const PreviewImage = () => {
@@ -11,10 +11,8 @@ const PreviewImage = () => {
   }
 
   return (
-    <div className={`${s.overlay} ${activeClass}`} onClick={closeOverlay}>
-      <div className={s.imgHolder}>
-        <img src={previewImg} alt="preview website" decoding="async" />
-      </div>
+    <div className={`${s.imgHolder} ${activeClass}`} onClick={closeOverlay}>
+      <img src={previewImg} alt="preview website" decoding="async" />
     </div>
   );
 };

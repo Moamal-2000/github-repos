@@ -1,6 +1,6 @@
 @import "src/Styles/mixins";
 
-.overlay {
+.imgHolder {
   position: fixed;
   left: 0;
   top: 0;
@@ -21,14 +21,7 @@
 }
 
 @include large {
-  .overlay {
+  .imgHolder {
     display: none;
   }
-}
-
-.imgHolder {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: 10;
 }
