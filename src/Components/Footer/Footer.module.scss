@@ -15,34 +15,6 @@
   }
 }
 
-.copyright {
-  color: var(--light-gray);
-  font-size: .95rem;
-}
-
-@media (max-width: 767px) {
-  .copyright {
-    margin-bottom: 20px;
-    text-align: center;
-  }
-}
-
-.copyright a {
-  display: inline-block;
-  outline: none;
-  margin: 0 4px;
-  color: var(--white);
-  transition: color .2s;
-
-  &:where(:hover, :focus-visible) {
-    color: var(--light-cyan-green);
-  }
-
-  &:focus-visible {
-    border-bottom: solid 2px var(--light-cyan-green);
-  }
-}
-
 .socialNav ul {
   display: flex;
   align-items: center;
