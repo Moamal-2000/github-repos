@@ -9,7 +9,7 @@ import u from "./UtilityClasses.module.scss";
 
 const Repos = () => {
   const isWebsiteOnline = useOnlineStatus();
-  const [reposData, setReposData, _, isLoading] = useAsync(MY_REPOS_URL, {}, [
+  const [reposData, setReposData, , isLoading] = useAsync(MY_REPOS_URL, {}, [
     isWebsiteOnline,
   ]);
 
