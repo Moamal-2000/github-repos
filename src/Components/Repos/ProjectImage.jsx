@@ -1,13 +1,18 @@
 import { useGlobalContext } from "src/Context/GlobalContext";
 import { getWebsiteImage } from "src/Functions/helper";
 import placeHolderImg from "src/Images/placeholder-img.webp";
+import useGetResizeWindow from "../../Hooks/useGetResizeWindow";
 import s from "./ProjectImage.module.scss";
 
 const ProjectImage = ({ repoName }) => {
   const { setIsPreviewActive, setPreviewImg } = useGlobalContext();
   const websiteImgUrl = getWebsiteImage(repoName);
+  const { windowWidth } = useGetResizeWindow();
+  const isLaptopWindow = windowWidth >= 1200;
 
   function handleClickImg(e) {
+    if (!isLaptopWindow) return;
+
     setIsPreviewActive(true);
     setPreviewImg(e.target.src);
   }
