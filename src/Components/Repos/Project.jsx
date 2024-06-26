@@ -1,16 +1,11 @@
-import { useState } from "react";
 import { IGNORED_WEBSITES_NAMES } from "src/Data/variables";
-import { getWebsiteImage } from "src/Functions/helper";
-import placeHolderImg from "src/Images/placeholder-img.webp";
 import PreviewImage from "./PreviewImage";
 import s from "./Project.module.scss";
+import ProjectImage from "./ProjectImage";
 import u from "./UtilityClasses.module.scss";
 
 const Project = ({ data }) => {
   let { homepage, html_url, name: repoName, description } = data;
-  const [isOverlayActive, setIsOverlayActive] = useState(false);
-  const [srcImg, setSrcImg] = useState("");
-  const websiteImgUrl = getWebsiteImage(repoName);
 
   if (IGNORED_WEBSITES_NAMES.includes(repoName)) return null;
 
@@ -19,18 +14,8 @@ const Project = ({ data }) => {
     homepage = liveLink;
   }
 
-  function handleClickImg(e) {
-    setIsOverlayActive(true);
-    setSrcImg(e.target.src);
-  }
-
   function disableLink(e) {
     if (!homepage) e.preventDefault();
-  }
-
-  function setLoadingImgState() {
-    const isImgUrlContainsLCP = websiteImgUrl.includes("age-calculator-app");
-    return isImgUrlContainsLCP ? "eager" : "lazy";
   }
 
   return (
@@ -42,15 +27,7 @@ const Project = ({ data }) => {
       />
 
       <div className={`${u.project} ${s.project}`} tabIndex="0">
-        <div className={s.placeHolderImg} onClick={(e) => handleClickImg(e)}>
-          <img
-            src={websiteImgUrl}
-            onError={(e) => (e.target.src = placeHolderImg)}
-            alt={repoName}
-            decoding="async"
-            loading={setLoadingImgState()}
-          />
-        </div>
+        <ProjectImage repoName={repoName} />
 
         <div className={s.content}>
           <a
