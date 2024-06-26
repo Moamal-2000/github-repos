@@ -1,4 +1,4 @@
-import { myAccounts, socialMediaComponent } from "src/Data/variables";
+import { MY_ACCOUNTS, socialMediaComponent } from "src/Data/variables";
 import codeWarsIcon from "src/Images/codewars-icon.webp";
 import SocialMediaIcon from "./SocialMediaIcon";
 
@@ -11,7 +11,7 @@ const SocialMedia = () => {
 
       <li>
         <a
-          href={myAccounts.codeWars}
+          href={MY_ACCOUNTS.codeWars}
           title="codeWars profile"
           target="_blank"
           rel="noreferrer"

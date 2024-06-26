@@ -8,7 +8,10 @@ export const IGNORED_WEBSITES_NAMES = [
   "testing-react3",
   "learning-pwa",
 ];
-export const myAccounts = {
+export const GENERAL_LINKS = {
+  vscode: "https://code.visualstudio.com",
+};
+export const MY_ACCOUNTS = {
   linkedin: "https://www.linkedin.com/in/moamal-alaa-a4bb15237",
   github: "https://github.com/Moamal-2000",
   codePen: "https://codepen.io/moamal-2000",
@@ -19,18 +22,18 @@ export const myAccounts = {
 export const socialMediaComponent = [
   {
     platform: "github",
-    accountLink: myAccounts.github,
+    accountLink: MY_ACCOUNTS.github,
   },
   {
     platform: "linkedin",
-    accountLink: myAccounts.linkedin,
+    accountLink: MY_ACCOUNTS.linkedin,
   },
   {
     platform: "codePen",
-    accountLink: myAccounts.codePen,
+    accountLink: MY_ACCOUNTS.codePen,
   },
   {
     platform: "facebook",
-    accountLink: myAccounts.facebook,
+    accountLink: MY_ACCOUNTS.facebook,
   },
 ];
