@@ -1,0 +1,72 @@
+@import "src/Styles/mixins";
+
+.content {
+  padding: 20px;
+  background-color: var(--white);
+  border-radius: 0 0 10px 10px;
+}
+
+.websiteName {
+  display: block;
+  outline: none;
+  width: fit-content;
+  font-weight: normal;
+  font-size: 1.25rem;
+  color: var(--dark-gray);
+  padding-bottom: 2px;
+  border-bottom: solid 2px transparent;
+  transition: color .3s, border-bottom-color .3s;
+
+  &:hover {
+    color: var(--black);
+  }
+
+  &:focus-visible {
+    color: var(--black);
+    border-bottom-color: var(--black);
+  }
+}
+
+.content .buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.content .buttons a {
+  display: inline-block;
+  outline: none;
+  color: var(--white);
+  font-weight: 500;
+  font-size: .9rem;
+  padding: 3.5px 16px;
+  border-radius: 6px;
+  transition: opacity .3s;
+  border: solid 2px var(--white);
+  transition: opacity .3s, border-color .3s;
+
+  &:hover {
+    opacity: .8;
+  }
+
+  &:active {
+    transform: scale(.99);
+  }
+
+  &:focus-visible {
+    border-color: var(--black);
+  }
+}
+
+.buttons .liveButton {
+  background: #FEAC5E;
+  background: linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E);
+
+  &.disabled {
+    @include prefix(filter, grayscale(1))
+  }
+}
+
+.buttons .repoButton {
+  background: var(--light-purple);
+}
