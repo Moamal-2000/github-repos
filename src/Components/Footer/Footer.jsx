@@ -6,10 +6,7 @@ const Footer = () => {
   return (
     <footer className={s.footer}>
       <CopyRights />
-
-      <nav className={s.socialNav}>
-        <SocialMedia />
-      </nav>
+      <SocialMedia />
     </footer>
   );
 };

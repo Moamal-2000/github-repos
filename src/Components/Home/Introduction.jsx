@@ -4,7 +4,7 @@ import s from "./Introduction.module.scss";
 const Introduction = () => {
   return (
     <section className={s.introduction} tabIndex="0">
-      <h1>My GitHub Projects</h1>
+      <h1>My GitHub Repositories</h1>
 
       <p>
         Explore my GitHub projects below. Each project includes a link to its
