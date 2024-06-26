@@ -1,3 +1,5 @@
+import { GENERAL_LINKS, MY_GITHUB_NAME } from "../Data/variables";
+
 export function removeDuplicatesByProperty(array, property) {
   const seen = new Set();
 
@@ -10,4 +12,8 @@ export function removeDuplicatesByProperty(array, property) {
   });
 
   return uniqueObjects;
+}
+
+export function getWebsiteImage(repoName) {
+  return `${GENERAL_LINKS.githubContentLink}/${MY_GITHUB_NAME}/${repoName}/main/website.webp`;
 }

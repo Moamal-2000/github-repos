@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { IGNORED_WEBSITES_NAMES, MY_GITHUB_NAME } from "src/Data/variables";
+import { IGNORED_WEBSITES_NAMES } from "src/Data/variables";
+import { getWebsiteImage } from "src/Functions/helper";
 import placeHolderImg from "src/Images/placeholder-img.webp";
 import PreviewImage from "./PreviewImage";
 import s from "./Project.module.scss";
@@ -9,8 +10,7 @@ const Project = ({ data }) => {
   let { homepage, html_url, name: repoName, description } = data;
   const [isOverlayActive, setIsOverlayActive] = useState(false);
   const [srcImg, setSrcImg] = useState("");
-  const baseUrl = "https://raw.githubusercontent.com";
-  const websiteImgUrl = `${baseUrl}/${MY_GITHUB_NAME}/${repoName}/main/website.webp`;
+  const websiteImgUrl = getWebsiteImage(repoName);
 
   if (IGNORED_WEBSITES_NAMES.includes(repoName)) return null;
 

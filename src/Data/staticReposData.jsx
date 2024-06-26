@@ -78,11 +78,4 @@ export const staticReposData = [
     description: "",
     id: uuid(),
   },
-  // {
-  //   homepage: "",
-  //   html_url: "",
-  //   name: "",
-  //   description: "",
-  //   id: uuid(),
-  // },
 ];
