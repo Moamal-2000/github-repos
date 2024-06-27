@@ -27,7 +27,11 @@ const PreviewImage = () => {
   useEffect(() => handleResizeWindow(), [windowWidth]);
 
   return (
-    <div className={`${s.imgHolder} ${activeClass}`} onClick={closeOverlay}>
+    <div
+      className={`${s.imgHolder} ${activeClass}`}
+      onClick={closeOverlay}
+      aria-haspopup="true"
+    >
       <img src={previewImg} alt="preview website" decoding="async" />
     </div>
   );
