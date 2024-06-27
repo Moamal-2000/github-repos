@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { staticReposData } from "src/Data/staticReposData";
-import { MY_REPOS_URL } from "src/Data/variables";
+import { MY_REPOS_API } from "src/Data/variables";
 import { removeDuplicatesByProperty } from "src/Functions/helper";
 import useAsync from "src/Hooks/useAsync";
 import useOnlineStatus from "src/Hooks/useOnlineStatus";
@@ -10,7 +10,7 @@ import u from "./UtilityClasses.module.scss";
 const Repos = () => {
   const isWebsiteOnline = useOnlineStatus();
   const [reposData, setReposData, isError, isLoading] = useAsync(
-    MY_REPOS_URL,
+    MY_REPOS_API,
     {},
     [isWebsiteOnline]
   );
