@@ -4,7 +4,7 @@ import { MY_REPOS_URL } from "src/Data/variables";
 import { removeDuplicatesByProperty } from "src/Functions/helper";
 import useAsync from "src/Hooks/useAsync";
 import useOnlineStatus from "src/Hooks/useOnlineStatus";
-import Project from "./Project";
+import ProjectCard from "./ProjectCard/ProjectCard";
 import u from "./UtilityClasses.module.scss";
 
 const Repos = () => {
@@ -28,7 +28,7 @@ const Repos = () => {
       {isLoading && <p>Loading ...</p>}
       <div className={u.repos}>
         {reposData?.map((obj) => (
-          <Project data={obj} key={obj.id} />
+          <ProjectCard data={obj} key={obj.id} />
         ))}
       </div>
     </>

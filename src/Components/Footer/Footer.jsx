@@ -1,4 +1,4 @@
-import SocialMedia from "../Shared/SocialMedia";
+import SocialMedia from "../Shared/SmallComponents/SocialMedia";
 import CopyRights from "./CopyRights/CopyRights";
 import s from "./Footer.module.scss";
 

@@ -1,6 +1,6 @@
 import Footer from "./Components/Footer/Footer";
 import Home from "./Components/Home/Home";
-import PreviewImage from "./Components/Home/Repos/PreviewImage";
+import PreviewImage from "./Components/Home/Repos/PreviewImage/PreviewImage";
 
 function App() {
   return (

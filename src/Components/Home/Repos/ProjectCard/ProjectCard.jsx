@@ -1,10 +1,10 @@
 import { IGNORED_WEBSITES_NAMES } from "src/Data/variables";
-import s from "./Project.module.scss";
-import ProjectContent from "./ProjectContent";
-import ProjectImage from "./ProjectImage";
-import u from "./UtilityClasses.module.scss";
+import ProjectContent from "../ProjectContent/ProjectContent";
+import ProjectImage from "../ProjectImage/ProjectImage";
+import u from "../UtilityClasses.module.scss";
+import s from "./ProjectCard.module.scss";
 
-const Project = ({ data }) => {
+const ProjectCard = ({ data }) => {
   const isInBlackList = IGNORED_WEBSITES_NAMES.includes(data.name);
 
   if (isInBlackList) return null;
@@ -17,4 +17,4 @@ const Project = ({ data }) => {
   );
 };
 
-export default Project;
+export default ProjectCard;
