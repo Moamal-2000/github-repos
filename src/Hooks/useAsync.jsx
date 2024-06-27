@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-const useAsync = (api, options = {}, dependencies = []) => {
+const useAsync = (api, dependencies = [], options = {}) => {
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   const [isDone, setIsDone] = useState(false);
@@ -9,13 +9,14 @@ const useAsync = (api, options = {}, dependencies = []) => {
 
   async function fetchData() {
     setIsDone(false);
+
     try {
       setIsLoading(true);
       const res = await axios(api, options);
       setData(res.data);
     } catch (err) {
       setIsError(true);
-      console.log(err.message);
+      console.error(`Failed Request data: ${err.message}`);
     } finally {
       setIsLoading(false);
       setIsDone(true);

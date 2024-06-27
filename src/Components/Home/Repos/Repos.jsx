@@ -9,11 +9,9 @@ import u from "./UtilityClasses.module.scss";
 
 const Repos = () => {
   const isWebsiteOnline = useOnlineStatus();
-  const [reposData, setReposData, isError, isLoading] = useAsync(
-    MY_REPOS_API,
-    {},
-    [isWebsiteOnline]
-  );
+  const [reposData, setReposData, isError, isLoading] = useAsync(MY_REPOS_API, [
+    isWebsiteOnline,
+  ]);
 
   function updateReposData() {
     const mergedReposData = reposData.concat(staticReposData);
