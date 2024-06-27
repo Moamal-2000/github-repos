@@ -9,9 +9,11 @@ import u from "./UtilityClasses.module.scss";
 
 const Repos = () => {
   const isWebsiteOnline = useOnlineStatus();
-  const [reposData, setReposData, , isLoading] = useAsync(MY_REPOS_URL, {}, [
-    isWebsiteOnline,
-  ]);
+  const [reposData, setReposData, isError, isLoading] = useAsync(
+    MY_REPOS_URL,
+    {},
+    [isWebsiteOnline]
+  );
 
   function updateReposData() {
     const mergedReposData = reposData.concat(staticReposData);
@@ -26,6 +28,11 @@ const Repos = () => {
   return (
     <>
       {isLoading && <p>Loading ...</p>}
+
+      {isError && !isLoading && (
+        <p className={u.errorMsg}>Failed to load more repositories.</p>
+      )}
+
       <div className={u.repos}>
         {reposData?.map((obj) => (
           <ProjectCard data={obj} key={obj.id} />
