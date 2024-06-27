@@ -1,5 +1,5 @@
 import SocialMedia from "../Shared/SocialMedia";
-import CopyRights from "./CopyRights";
+import CopyRights from "./CopyRights/CopyRights";
 import s from "./Footer.module.scss";
 
 const Footer = () => {

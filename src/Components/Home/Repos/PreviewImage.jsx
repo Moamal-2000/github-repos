@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useGlobalContext } from "src/Context/GlobalContext";
-import useGetResizeWindow from "../../Hooks/useGetResizeWindow";
+import useGetResizeWindow from "src/Hooks/useGetResizeWindow";
 import s from "./PreviewImage.module.scss";
 
 const PreviewImage = () => {

@@ -1,5 +1,5 @@
-import Repos from "../Repos/Repos";
-import Introduction from "./Introduction";
+import Introduction from "./Introduction/Introduction";
+import Repos from "./Repos/Repos";
 
 const Home = () => {
   return (
