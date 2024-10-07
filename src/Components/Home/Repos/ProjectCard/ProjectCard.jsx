@@ -5,7 +5,9 @@ import u from "../UtilityClasses.module.scss";
 import s from "./ProjectCard.module.scss";
 
 const ProjectCard = ({ data }) => {
-  const isInBlackList = IGNORED_WEBSITES_NAMES.includes(data?.name);
+  const isInBlackList = IGNORED_WEBSITES_NAMES.map((name) =>
+    name.toLowerCase()
+  ).includes(data?.name?.toLowerCase());
 
   if (isInBlackList) return null;
 

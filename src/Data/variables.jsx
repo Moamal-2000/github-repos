@@ -3,6 +3,10 @@ export const MY_EMAIL = "moamalalaapro1@email.com";
 export const MY_REPOS_API = `https://api.github.com/users/${MY_GITHUB_NAME}/repos`;
 
 export const IGNORED_WEBSITES_NAMES = [
+  "react-redux-e-commerce",
+  "learning-unit-testing",
+  "E-commerce-forked",
+  "learning-gitflow",
   "testing-react3",
   "learning-pwa",
   "github-repos",
