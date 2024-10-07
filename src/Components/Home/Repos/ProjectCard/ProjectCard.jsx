@@ -11,7 +11,7 @@ const ProjectCard = ({ data }) => {
 
   return (
     <div className={`${u.project} ${s.project}`} tabIndex="0">
-      <ProjectImage repoName={data.name} />
+      <ProjectImage repoName={data.name} websiteLink={data.homepage} />
       <ProjectContent data={data} />
     </div>
   );
