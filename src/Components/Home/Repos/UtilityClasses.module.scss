@@ -2,13 +2,25 @@
 
 .repos {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   justify-content: center;
   justify-items: center;
   gap: 20px;
   column-gap: 16px;
   margin: 60px 0;
   transition: opacity .3s;
+}
+
+@include small {
+  .repos {
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  }
+}
+
+@include very-small {
+  .repos {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
 }
 
 .repos .project:not(:hover) {

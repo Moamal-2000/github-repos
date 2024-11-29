@@ -8,15 +8,11 @@
   transition: opacity .3s;
   position: relative;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
 
   &:focus {
     outline: none;
-  }
-}
-
-@media (max-width: 658px) and (min-width: 376px) {
-  .project {
-    width: 300px;
   }
 }
 
