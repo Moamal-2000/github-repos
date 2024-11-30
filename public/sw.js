@@ -1,4 +1,4 @@
-const CACHE_NAME = "github-repos-v2";
+const CACHE_NAME = "v3";
 const assets = ["/", "/index.html"];
 
 async function caching() {
@@ -8,24 +8,27 @@ async function caching() {
 
 async function respondFetch(request) {
   const cacheResponse = await caches.match(request);
-  const networkResponse = fetch(request.url).then((networkRes) => {
-    return caches.open(CACHE_NAME).then((cache) => {
-      const skipPutResInCache = networkRes.url.includes("chrome-extension");
-      if (skipPutResInCache) return networkRes;
-      cache.put(request, networkRes.clone());
-      return networkRes;
-    });
-  });
+  const networkResponse = await getNetworkResponse(request);
 
   return cacheResponse || networkResponse;
 }
 
-function updateLatestCache() {
-  caches.keys().then((keys) => {
-    return Promise.all(
-      keys.filter((key) => key !== CACHE_NAME).map((key) => caches.delete(key))
-    );
-  });
+async function getNetworkResponse(request) {
+  const networkRes = await fetch(request.url);
+  const cache = await caches.open(CACHE_NAME);
+  const isGoogleExtension = networkRes.url.includes("chrome-extension");
+
+  if (isGoogleExtension) return networkRes;
+
+  cache.put(request, networkRes.clone());
+  return networkRes;
+}
+
+async function cacheAllRequests() {
+  const cacheKeys = await caches.keys();
+  const oldCacheKeys = cacheKeys.filter((key) => key !== CACHE_NAME);
+
+  await Promise.all(oldCacheKeys.map((key) => caches.delete(key)));
 }
 
 self.addEventListener("install", (event) => {
@@ -35,7 +38,7 @@ self.addEventListener("install", (event) => {
 
 self.addEventListener("activate", (event) => {
   clients.claim();
-  event.waitUntil(updateLatestCache());
+  event.waitUntil(cacheAllRequests());
 });
 
 self.addEventListener("fetch", async (event) => {
