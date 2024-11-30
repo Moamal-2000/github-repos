@@ -29,10 +29,12 @@ function updateLatestCache() {
 }
 
 self.addEventListener("install", (event) => {
+  self.skipWaiting();
   event.waitUntil(caching());
 });
 
 self.addEventListener("activate", (event) => {
+  clients.claim();
   event.waitUntil(updateLatestCache());
 });
 
