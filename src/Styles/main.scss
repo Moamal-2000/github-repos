@@ -1,5 +1,6 @@
 @import "./colors.scss";
 @import "./fonts.css";
+@import "./mixins.scss";
 
 * {
   padding: 0;
@@ -35,9 +36,15 @@ body {
   margin: 0 auto;
 }
 
-@media (max-width: 992px) {
+@include medium {
   .container {
     width: 90%;
+  }
+}
+
+@include small {
+  .container {
+    width: 95%;
   }
 }
 

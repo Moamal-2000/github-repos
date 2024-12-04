@@ -1,9 +1,21 @@
 @import "src/Styles/mixins";
 
 .content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
   padding: 20px;
   background-color: var(--white);
   border-radius: 0 0 10px 10px;
+}
+
+@include small {
+  .content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px;
+  }
 }
 
 .websiteName {
@@ -27,10 +39,27 @@
   }
 }
 
+@include small {
+  .websiteName {
+    font-size: 1rem;
+  }
+}
+
 .content .buttons {
   display: flex;
   gap: 10px;
-  margin-top: 10px;
+}
+
+@include small {
+  .content .buttons {
+    width: 100%;
+  }
+}
+
+@include very-small {
+  .content .buttons {
+    flex-direction: column;
+  }
 }
 
 .content .buttons a {
@@ -55,6 +84,18 @@
 
   &:focus-visible {
     border-color: var(--black);
+  }
+}
+
+@include small {
+  .content .buttons a {
+    font-size: 1rem;
+    font-weight: normal;
+    padding: 10px 16px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
